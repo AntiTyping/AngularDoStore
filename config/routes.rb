@@ -1,4 +1,9 @@
 AngularDoStore::Application.routes.draw do
+  resources :tasks
+  match '/tasks.json', :controller => 'tasks', :via => [:options], :action => 'options', :constraints => {:method => 'OPTIONS'}
+  match '/tasks/:id.json', :controller => 'tasks', :via => [:options], :action => 'options', :constraints => {:method => 'OPTIONS'}
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -39,7 +44,7 @@ AngularDoStore::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
