@@ -36,5 +36,6 @@ namespace :deploy do
   end
 
   after :finishing, 'deploy:cleanup'
+  after 'deploy:restart', 'unicorn:restart'   # app preloaded
 
 end
