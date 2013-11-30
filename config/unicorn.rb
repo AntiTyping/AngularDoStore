@@ -1,8 +1,11 @@
 # config/unicorn.rb
 worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3)
-timeout 15
+timeout 180
 preload_app true
 pid "tmp/pids/unicorn.pid"
+# Log everything to one file
+stderr_path "log/unicorn.log"
+stdout_path "log/unicorn.log"
 
 before_fork do |server, worker|
   Signal.trap 'TERM' do
