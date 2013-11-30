@@ -43,3 +43,12 @@ gem 'unicorn'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :development do
+  gem 'capistrano', '~> 3.0.1'
+  # gem 'sshkit'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails'
+  gem 'sepastian-capistrano3-unicorn', :require => false
+end
