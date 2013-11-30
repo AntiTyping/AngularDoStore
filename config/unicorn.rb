@@ -2,7 +2,7 @@
 worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3)
 timeout 180
 preload_app true
-pid "/var/www/AngularDoStore/unicorn.pid"
+pid "#{fetch :app_path}/unicorn2.pid"
 # Log everything to one file
 stderr_path "log/unicorn.log"
 stdout_path "log/unicorn.log"
