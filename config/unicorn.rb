@@ -2,7 +2,7 @@
 worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3)
 timeout 180
 preload_app true
-pid "../shared/unicorn.pid"
+pid "../unicorn.pid"
 # Log everything to one file
 stderr_path "log/unicorn.log"
 stdout_path "log/unicorn.log"
