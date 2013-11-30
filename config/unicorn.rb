@@ -6,6 +6,7 @@ pid "/var/www/AngularDoStore/unicorn.pid"
 # Log everything to one file
 stderr_path "log/unicorn.log"
 stdout_path "log/unicorn.log"
+rails_env = ENV['RAILS_ENV'] || 'production'
 
 before_fork do |server, worker|
   Signal.trap 'TERM' do
