@@ -52,3 +52,5 @@ group :development do
   gem 'capistrano-rails'
   gem 'sepastian-capistrano3-unicorn', :require => false
 end
+
+gem 'pg'
